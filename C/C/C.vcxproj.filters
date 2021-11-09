@@ -42,7 +42,10 @@
     <ClCompile Include="Constant.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Auto.c">
+    <ClCompile Include="StorageClassSpecifier.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

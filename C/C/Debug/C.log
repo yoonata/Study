@@ -1,0 +1,66 @@
+﻿  Function.c
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Function.c(6,15): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Function.c(6,15): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 1개가 제공되었습니다.
+  StorageClassSpecifier.c
+  Switch.c
+  Constant.c
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Constant.c(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  If.c
+  Operator.c
+  Printf.c
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(20,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(20,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(20,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%c'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(21,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(21,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(21,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%s'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(22,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(22,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(22,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%d'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(23,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(23,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(23,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%i'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(24,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(24,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(24,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%f'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(25,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(25,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(25,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%o'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(26,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(26,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(26,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%u'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(27,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(27,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(27,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%x'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(28,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(28,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(28,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%X'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(29,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(29,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(29,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%e'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(30,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(30,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(30,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%E'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(31,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(31,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(31,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%g'에 필요합니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(32,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(32,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Printf.c(32,9): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%G'에 필요합니다.
+  PrintfEx.c
+  Scanf.c
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Scanf.c(18,15): warning C4477: 'scanf' : 서식 문자열 '%f'에 'float *' 형식의 인수가 필요하지만 variadic 인수 4의 형식이 'double *'입니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Scanf.c(18,15): message : 서식 문자열에서 '%lf'을(를) 사용하는 것이 좋습니다.
+  Variable.c
+D:\Users\tiyua\Documents\GitHub\Study\C\C\Variable.c(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  While.c
+  코드를 생성하고 있습니다...
+StorageClassSpecifier.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+Switch.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+If.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+Printf.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+PrintfEx.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+Scanf.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+While.obj : error LNK2005: _main이(가) Function.obj에 이미 정의되어 있습니다.
+D:\Users\tiyua\Documents\GitHub\Study\C\Debug\C.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

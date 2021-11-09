@@ -4,3 +4,5 @@ https://visualstudio.microsoft.com/ko/downloads/
 3. 도구 -> 옵션 -> 프로젝트 및 솔루션 -> 위치에서 저장소 위치 바꾸기
 4. 실행 및 새프로젝트 -> 빈 프로젝트 -> 생성
 5. 소스 파일에서 우클릭 -> 새 항목 추가 -> 이름에서 .cpp를 .c로 바꾸기 -> 코딩 및 저장
+
+코드 정리 Ctrl+k -> Ctrl+f

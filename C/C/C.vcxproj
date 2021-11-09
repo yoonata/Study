@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Auto.c" />
+    <ClCompile Include="Function.c" />
+    <ClCompile Include="StorageClassSpecifier.c" />
     <ClCompile Include="Switch.c" />
     <ClCompile Include="Constant.c" />
     <ClCompile Include="If.c" />
