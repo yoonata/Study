@@ -139,8 +139,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Break.c" />
+    <ClCompile Include="BreakEx.c" />
+    <ClCompile Include="ConditionalExpression.c" />
+    <ClCompile Include="ConditionalExpressionEx.c" />
+    <ClCompile Include="ConstantEx.c" />
+    <ClCompile Include="Continue.c" />
+    <ClCompile Include="ContinueEx.c" />
+    <ClCompile Include="DoWhile.c" />
+    <ClCompile Include="DoWhileEx.c" />
+    <ClCompile Include="For.c" />
+    <ClCompile Include="ForEx.c" />
     <ClCompile Include="Function.c" />
+    <ClCompile Include="FunctionEx.c" />
+    <ClCompile Include="Goto.c" />
+    <ClCompile Include="GotoEx.c" />
+    <ClCompile Include="IfEx.c" />
+    <ClCompile Include="OperatorEx.c" />
+    <ClCompile Include="ScanfEx.c" />
     <ClCompile Include="StorageClassSpecifier.c" />
+    <ClCompile Include="StorageClassSpecifierEx.c" />
     <ClCompile Include="Switch.c" />
     <ClCompile Include="Constant.c" />
     <ClCompile Include="If.c" />
@@ -148,8 +166,11 @@
     <ClCompile Include="Printf.c" />
     <ClCompile Include="PrintfEx.c" />
     <ClCompile Include="Scanf.c" />
+    <ClCompile Include="SwitchEx.c" />
     <ClCompile Include="Variable.c" />
+    <ClCompile Include="VariableEx.c" />
     <ClCompile Include="While.c" />
+    <ClCompile Include="WhileEx.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

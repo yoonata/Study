@@ -1,7 +1,7 @@
+/*
 #include <stdio.h>
 
 int main(void) {
-	/*
 	if(조건식)
 	{
 		코드1
@@ -14,6 +14,6 @@ int main(void) {
 	{
 		코드3
 	}
-	*/
-
 }
+*/
+
