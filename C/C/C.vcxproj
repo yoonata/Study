@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Array.c" />
+    <ClCompile Include="ArrayEx.c" />
     <ClCompile Include="Break.c" />
     <ClCompile Include="BreakEx.c" />
     <ClCompile Include="ConditionalExpression.c" />
@@ -156,7 +158,11 @@
     <ClCompile Include="GotoEx.c" />
     <ClCompile Include="IfEx.c" />
     <ClCompile Include="OperatorEx.c" />
+    <ClCompile Include="Recursive.c" />
+    <ClCompile Include="RecursiveEx.c" />
     <ClCompile Include="ScanfEx.c" />
+    <ClCompile Include="Sizeof.c" />
+    <ClCompile Include="SizeofEx.c" />
     <ClCompile Include="StorageClassSpecifier.c" />
     <ClCompile Include="StorageClassSpecifierEx.c" />
     <ClCompile Include="Switch.c" />

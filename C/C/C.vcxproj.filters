@@ -111,5 +111,23 @@
     <ClCompile Include="WhileEx.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Sizeof.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SizeofEx.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursive.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RecursiveEx.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Array.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayEx.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
