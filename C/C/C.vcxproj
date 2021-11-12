@@ -158,6 +158,7 @@
     <ClCompile Include="GotoEx.c" />
     <ClCompile Include="IfEx.c" />
     <ClCompile Include="OperatorEx.c" />
+    <ClCompile Include="Pointer.c" />
     <ClCompile Include="Recursive.c" />
     <ClCompile Include="RecursiveEx.c" />
     <ClCompile Include="ScanfEx.c" />
