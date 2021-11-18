@@ -1,0 +1,26 @@
+물론, C 언어의 gets, getc, getchar, scanf, getch 등의 함수들을 이용해서 입력을 받을 수 있다. 하지만, C++를 배우고 있으니 C++ 고유의 입력 방식에 대해서 알아보도록 하자.
+1. cin과 >> 연산자를 이용한 키 입력
+
+C++에서는 표준 입력 스트림인 cin과 >> 연산자를 이용하여 사용자로부터 키를 입력받는다. cin과 >> 연산자도 iostream 헤더 파일에 선언되어 있다.
+#include <iostream>
+using namespace std;
+int main() {
+ cout << "너비를 입력하세요 >>";
+int width;
+cin >> width; //키보드로부터 정수 값 너비를 읽어 width 변수에 저장
+cout << "높이를 입력하세요 >>";
+int height;
+cin >> height; //키보드로부터 정수 값 너비를 읽어 height 변수에 저장
+int area = width * height;
+cout << "면적은 " << area << endl;
+}
+cin과 >> 연산자는 사용자의 키 입력을 cin 스트림 버퍼에 저장을 해 두었다가 사용자가 엔터를 치면 스트림 버퍼에 저장된 정보를 가져온다.
+
+2. cin 객체
+cin은 키보드와 C++ 응용프로그램을 연결하는 C++ 표준 입력 스트림 객체(standard input stream object)이다. 키보드로 입력되는 값들은 모두 cin 객체의 스트림 버퍼로 들어오며, 응용프로그램은 cin 객체로부터 입력된 키 값을 읽는다.
+
+3. >> 연산자
+>> 연산자는 스트림 추출 연산자(stream extraction operator)로 불리며 왼쪽 피연산자인 스트림 객체로부터 데이터를 읽어 오른쪽 피연산자에 지정된 변수에 삽입한다. 스트림 추출 연산자는 본래 정수를 시프트하는 C++의 기본 연산자이지만, <iostream> 헤더 파일에 스트림 추출연산자로 재정의(operator overloading)되어 있다.
+
+
+

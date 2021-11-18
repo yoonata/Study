@@ -1,0 +1,62 @@
+1. static의 특성
+static은 변수와 함수의 생명 주기(life cycle)와 사용 범위(scope)를 지정하는 4가지 방식(storage class) 중 하나로서, static으로 선언된 변수와 함수의 생명 주기와 사용 범위는 다음과 같은 특징을 가진다.
+- 생명 주기: 프로그램이 시작할 때 생성되고 프로그램이 종료할 때 소멸
+- 사용 범위: 변수나 함수가 선언된 범위 내에서 사용. 전역(global) 혹은 지역(local)으로 구분
+C++에서 클래스 멤버 변수와 멤버 함수를 포함하여 모든 변수와 함수는 static 지정자로 선언 가능하다.
+non-static 멤버는 각 객체마다 별도로 생성되므로 인스턴스(instance) 멤버라고 부르며, static 멤버는 클래스 당 하나만 생기고 모든 객체들이 공유하므로 클래스(class) 멤버라고도 부른다.
+
+2. static 멤버 선언
+멤버를 static으로 선언하려면 멤버 함수나 멤버 변수의 선언문 앞에 static 지정자를 붙이면 된다. 모든 멤버들이 static으로 선언될 수 있으며, static 멤버들은 private, public, protected 등 어떤 접근 지정도 가능하다.
+class Person {
+	public:
+	double money;
+	void addMoney(int money) {
+		this->money += money;
+	}
+	static int sharedMoney;
+	static void addShared(int n) {
+		sharedMoney += n;
+	}
+};
+int Person::sharedMoney = 10; //sharedMoney를 10으로 초기화
+- static 멤버 변수는 외부에 전역(global) 변수로 선언되어야 한다.
+static 멤버 변수는 변수의 공간을 할당받는 선언문이 추가적으로 필요하다. 이 선언문은 클래스 바깥의 전역 공간에 선언되어야 한다. 위의 예시에서 "int Person::sharedMoney = 10;"라는 문장이 바로 이것이다. 이 선언문으로 초기화를 해주지 않으면 링크 오류가 발생한다. 컴파일 오류는 생기지 않지만, 실행 파일을 만들기 위해 빌드를 하는 과정인 링킹에서 링크 오류가 발생한다. 따라서, 컴파일 오류가 난다고 기억하면 안 될 것이다.
+
+3. static 멤버 사용
+
+1) 객체의 멤버로 접근하는 방법
+static 멤버는 객체 이름이나 객체 포인터를 이용하여 보통 멤버와 동일하게 다루면 된다. 일반적인 형식은 다음과 같다.
+객체.static멤버
+객체포인터->static멤버
+
+2) 클래스명과 범위지정 연산자(::)로 접근
+- 사용 방법
+static 멤버는 클래스 당 하나만 존재하므로 클래스의 이름으로도 접근할 수 있다. 다음과 같이 클래스 이름과 static 멤버 사이에 범위 지정 연산자(::)를 사용하여 static 멤버를 접근한다.
+클래스명::static멤버
+Person 클래스명으로 static 멤버를 접근하는 예를 들면 다음과 같다.
+Person::sharedMoney = 200; //클래스명으로 접근
+Person::addShared(200); //클래스명으로 접근
+객체 이름으로 sharedMoney와 addShared() 멤버를 접근하는 코드는 다음과 같이 Person 클래스명으로 바로 접근할 수 있다.
+Person p1;
+Personp2;
+p1.sharedMoney = 200; //Person::sharedMoney = 200 과 같다.
+p2.sharedMoney = 300; //Person::sharedMoney = 300 과 같다.
+그러나, non-static 멤버는 클래스명으로 접근할 수 없다. non-static 멤버는 각 객체에 종속되기 때문에 클래스에 종속적인 static 멤버처럼 사용할 수는 없다.
+
+4. static의 활용
+
+static은 다음과 같은 목적으로 활용된다.
+- 전역 변수나 전역 함수를 클래스에 캡슐화
+객체 지향 언어에서 추구하는 핵심 가치가 캡슐화이다. 전역 함수나 전역 변수를 없애고 모든 함수나 변수를 클래스 안에 선언하도록 한다. 같은 객체 지향 언어인 Java는 100% 캡슐화하지만, C++는 전역 변수와 전역 함수를 사용하는 C 언어와의 호환성 때문에, 100% 캡슐화하지 못한다.
+- 객체 사이에 공유 변수를 만들고자 할 때
+static 멤버는 클래스의 모든 인스턴스(객체)들이 공유하는 변수나 함수를 만들고자 할 때 사용된다.
+
+5. static 멤버 함수의 특징
+
+- static 멤버 함수는 오직 static 멤버들만 접근
+static 멤버 함수는 오직 static 멤버 변수에 접근하거나 static 멤버 함수만 호출할 수 있다. static 멤버 함수는 객체가 생성되지 않은 어떤 시점에서도 호출될 수 있고, 클래스 이름으로 직접 호출될 수 있기 때문에, static 멤버 함수에서 non-static 멤버에 접근하는 것은 허용되지 않는다.
+그러나 반대로 non-static 멤버 함수는 static 멤버를 접근하는데 전혀 제약이 없다.
+- static 멤버 함수는 this를 사용할 수 없다.
+static 멤버 함수는 객체가 생기기 전부터 호출 가능하므로, static 멤버 함수에서 this를 사용할 수 없도록 제약한다. 만약 static 멤버 함수 내에서 this를 사용할 경우, 컴파일 오류가 발생하게 된다.
+
+
