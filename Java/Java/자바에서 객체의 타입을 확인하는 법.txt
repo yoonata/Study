@@ -1,0 +1,118 @@
+자바에서 객체의 타입을 확인하는 법
+
+
+
+
+
+자바로 코딩을 하다보면 각 객체들의 타입을 체크해야만 할 때가 있다. 그럴 때에 사용하는 것이 바로 instanceof 연산자이다.
+
+
+
+instanceof 연산자의 구문은 다음과 같다:
+
+객체_레퍼런스 instanceof 클래스_타입
+
+
+
+instanceof는 이항 연산자로서 주어진 레퍼런스 변수가 가리키는 객체가 주어진 클래스의 타입인지 확인을 한 후, 그 결과에 해당하는 boolean을 반환한다.
+
+
+
+i.e.
+
+class Person {}
+
+class Student extends Person {}
+
+class Researcher extends Person {}
+
+class Professor extends Researcher {}
+
+
+
+public class InstanceofExample {
+
+
+
+public static void main(String[] args) {
+
+Person a = new Studnet();
+
+Person b = new Researcher();
+
+Person c = new Professor();
+
+Person d = new Person();
+
+
+
+if ( a instanceof Student)
+
+System.out.println("a is a student");
+
+
+
+if (b instanceof Person)
+
+System.out.println("b is a person");
+
+
+
+if (b instanceof Researcher)
+
+System.out.println("b is a researcher");
+
+
+
+if (c instanceof Person)
+
+System.out.println("c is a person");
+
+
+
+if (c instanceof Researcher)
+
+System.out.println("c is a researcher");
+
+
+
+if (c instanceof Professor)
+
+System.out.println("c is a professor");
+
+
+
+if ( !(d instanceof Researcher) )
+
+System.out.println("d is not a researcher");
+
+
+
+}
+
+}
+
+
+
+
+
+
+
+위의 예제를 실행시키게 되면, 다음과 같은 결과를 얻게 될 것이다.
+
+
+
+a is a student
+
+b is a person
+
+b is a researcher
+
+c is a person
+
+c is a researcher
+
+c is a professor
+
+d is not a researcher
+

@@ -1,0 +1,109 @@
+객체의 타입 변환 : 업캐스팅과 다운캐스팅
+
+
+
+
+
+캐스팅(casting)이란 개발자가 프로그램 코드로 행하는 강제 타입 변환이다. 자바에서 캐스팅은 업캐스팅과 다운캐스팅의 두 가지가 있다.
+
+
+
+
+
+1. 업캐스팅(upcasting)
+
+
+
+- 서브 클래스의 레퍼런스를 슈퍼 클래스 레퍼런스에 대입
+
+- 슈퍼 클래스 레퍼런스로 서브 클래스 객체를 가리키게 되는 현상
+
+
+
+서브 클래스는 슈퍼 클래스의 모든 특성을 상속받는다. 따라서 서브 클래스는 슈퍼 클래스로 취급될 수 있다. 예를 들면, 사람을 생물이라고 불러도 되는 것과 같다.서브 클래스 객체가 슈퍼 클래스 타입으로 변환되는 것을 업캐스팅(upcasting)이라고 한다.
+
+i.e.
+class Person {
+String name;
+String id;
+
+public Person(String name) {
+this.name = name;
+}
+}
+
+class Student extends Person {
+String grade;
+String department;
+
+public Student(String name) {
+super(name);
+}
+}
+
+public class UpcastingEx {
+public static void main(String[] args) {
+Person p;
+Student s = new Student("Jude");
+p = s; //업캐스팅 발생
+
+System.out.println(p.name); //오류 없음
+
+p.grade = "A"; //컴파일 오류. 업캐스팅에 의해 p의 레퍼런스 타입은 Person 타입이다
+}
+}
+
+
+업캐스팅을 하면 객체 내에 있는 모든 멤버 변수들을 다 접근할 수는 없고, 오직 업캐스팅한 슈퍼 클래스의 멤버 변수만 접근이 가능하다.
+
+또한, 업캐스팅을 할 때에는 굳이 명시적 타입 변환을 하지 않아도 된다.
+
+
+
+2. 다운 캐스팅
+
+
+- 슈퍼 클래스 레퍼런스를 서브 클래스 레퍼런스에 대입
+
+- 업캐스팅된 것을 다시 원래대로 되돌리는 것
+
+- 반드시 명시적 타입 변환 지정
+
+
+
+
+
+업캐스팅 된 것을 다시 원래대로 되돌리는 것을 다운캐스팅(downcasting)이라고 한다. 다운캐스팅은 업캐스팅과 달리 명시적으로 타입을 지정 해야만 한다.
+
+
+
+
+
+다음 예시 코드를 통해서 더 자세히 알아보도록 하자.
+
+
+
+i.e.
+
+public class DowncastingEx {
+
+public static void main(String[] args) {
+
+Person p = new Student("Jude");
+
+Student s;
+
+
+
+s = (Student) p; //다운캐스팅
+
+
+
+System.out.println(s.name); //오류 없음
+
+s.grade = "A"; //오류 없음
+
+}
+
+}
+

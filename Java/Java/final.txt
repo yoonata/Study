@@ -1,0 +1,107 @@
+final
+
+
+
+final은 반드시 알아야 할 기본적인 키워드이다. final 키워드가 사용될 수 있는 곳은 세 군데이다.
+
+
+
+
+
+1. final 클래스
+
+
+
+final이 클래스 이름 앞에 사용되면 클래스를 상속받을 수 없음을 지정한다. 다음 예시의 FinalClass는 final 키워드가 클래스 선언 시에 사용 되었기 때문에, 다른 클래스가 이를 상속 받으려 할 경우 컴파일 오류가 발생하게 된다.
+
+
+
+i.e.
+
+
+
+final class FinalClass {
+
+...
+
+}
+
+
+
+class DerivedClass extends FinalClass { //컴파일 오류 발생
+
+...
+
+}
+
+
+
+
+
+2. final 메소드
+
+
+
+메소드 앞에 final 속성이 붙으면 이 메소드는 더 이상 오버라이딩할 수 없음을 지정한다. 자식 클래스가 부모 클래스의 특정 메소드를 오버라이딩하지 못하게 하고 무조건 상속받아 사용하도록 하고자 한다면 final로 지정하면 된다.
+
+
+
+i.e.
+
+
+
+public class SuperClass {
+
+protected final int finalMethod() {
+
+...
+
+}
+
+}
+
+
+
+public class DerivedClass extends SuperClass {
+
+protected int finalMethod() { // 컴파일 오류, 오버라이딩을 할 수 없음
+
+...
+
+}
+
+}
+
+
+
+
+
+3. final 필드, 상수 정의
+
+
+
+자바에서 상수(constant)를 정의할 때 사용하는 방법이다. 상수란 초기값이 그대로 고정되어 변하지 않는 데이터를 말한다. 변수가 초기화를 한 후에 계속 값을 변경 시킬 수 있는 것과는 대조적이다.
+
+
+
+final로 상수 필드를 정의할 때 주의할 점이 있다. 상수 필드는 선언 시에 초깃값을 지정하여야 한다. 상수 필드는 한번 정의되면 값을 변경할 수 없다. 또한, 상수의 이름은 모두 대문자로, 여러 단어로 이루어져 있을 경우 '_'를 사용하는 것이 관습이다.
+
+
+
+i.e.
+
+public class ConstantExample {
+
+private static float int PI = 3.141592;
+
+
+
+public static void main(String[] args) {
+
+System.out.println(3 * 3 * PI);
+
+}
+
+}
+
+

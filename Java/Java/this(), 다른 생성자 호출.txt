@@ -1,0 +1,95 @@
+this(), 다른 생성자 호출
+
+
+
+
+
+this()는 한 클래스 내의 한 생성자에서 다른 생성자를 호출할 때 사용하는 자바 코드이다. 한 클래스 내의 어떤 메소드가 다른 메소드를 호출할 수 있는 것처럼 생성자도 중복된 다른 생성자를 호출할 수 있다. this()는 동일한 클래스 내의 다른 생성자의 호출이다.
+
+
+
+i.e.
+
+public class Book {
+
+String title;
+
+String author;
+
+int ISBN;
+
+
+
+public Book(Stiring title, String author, int ISBN) {
+
+this.title = title;
+
+this.author = author;
+
+this.ISBN = ISBN;
+
+System.out.println("객체 생성!");
+
+}
+
+
+
+public Book (String title, int ISBN) {
+
+this(title, "Anonymous", ISBN); //this()로 Book(Stiring title, String author, int ISBN) 생성자를 호출
+
+System.out.println("생성자가 호출되었음 1");
+
+}
+
+
+
+public Book() {
+
+this(null, null, 0); //this()로 Book(Stiring title, String author, int ISBN) 생성자를 호출
+
+System.out.println("생성자가 호출되었음 2");
+
+}
+
+
+
+public static void main(String[] args) {
+
+Book javaBook = new Book("Java Book", "Author Name", 3333);
+
+Book theBible = new Book("The Bible", 1);
+
+Book emptyBook = new Book();
+
+}
+
+}
+
+
+
+위의 예시 코드를 실행시키게 되면 출력 메세지를 통해서 this() 가 다른 생성자를 호출한다는 사실을 확일할 수 있다.
+
+
+
+
+
+- this()의 특징
+
+
+
+this()는 다음과 같이 몇 가지 주요한 특징을 가진다.
+
+
+
+1) this()는 생성자 코드에서만 사용할 수 있다 : 생성자가 아닌 일반 메소드에서 this()를 사용할 수 없다.
+
+
+
+2) this()는 동일한 클래스 내의 다른 생성자를 호출할 때 사용한다
+
+
+
+3) this()는 반드시 생성자의 첫 번째 문장에서 사용되어야 한다 : this()의 호출문은 반드시 생성자 코드의 첫 번째 문장이 되어야 한다. 그렇지 않을 경우, 컴파일 오류가 발생하게 된다.
+
+

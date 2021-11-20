@@ -1,0 +1,36 @@
+Annotation
+
+
+
+
+
+- 어노테이션은 Java 5에 추가된 기능이다!
+
+
+
+- 클래스나 메소드 위에 붙으며, '@'로 시작
+
+
+
+- 어노테이션을 클래스나 메타코드에 붙인 후, 클래스가 컴파일되거나 실행될 때 어노테이션의 유무나 어노테이션에 설정된 값을 통하여 클래스가 좀 더 다르게 실행되게 할 수 있다.
+
+
+
+- 어노테이션은 자바가 기본으로 제공하는 것도 있고, 사용자가 직접 작성한 커스텀 어노테이션(custom annotation)도 있다.
+
+
+ 
+
+
+- 커스텀 어노테이션을 JVM이 실행시에 감지할 수 있도록 하려면 "@Retention(RetentionPolicy.RUNTIME)"를 붙여줘야 한다.
+
+
+
+i.e.
+
+@Retention(RetentionPolicy.RUNTIME)
+
+public @interface count100 { ... }
+
+
+
