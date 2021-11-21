@@ -1,0 +1,75 @@
+Android OS 9 Pie 버전부터는 (tagetSdkVersion 28 이상일 경우) WebView에 일반적인 텍스트로 "http://" URL 접근이 막혔다. 따라서, 웹뷰에서 http를 통해서 웹페이지에 접근하려고 하면 "net::ERR_CLEARTEXT_NOT_PERMITTED" 에러가 발생하게 된다.
+
+ 
+
+약 30분간의 검색 끝에 이 에러에 대한 3가지 해결책들을 찾을 수 있었다.
+
+ 
+
+1) res/xml/network_security_config.xml 추가
+
+ 
+
+먼저, res/xml/network_security_config.xml 을 만들고, 아래의 코드를 추가한다.
+
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">ebookfrenzy.com</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">amazon.com</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">nytimes.com</domain>
+    </domain-config>
+</network-security-config>
+위의 코드에서 ebookfrenzy.com 이나 amazon.com 이 바로 앱에서 http로 접속할 웹 페이지의 URL이다.
+
+이 URL들을 적절한 (접근하려는 웹페이지의) URL로 대체한다.
+
+ 
+
+위 파일 추가 후 AndroidManifest.xml 에서 application에 networkSecurityConfig속성 추가한다.
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ...>
+    ...
+    <application
+        ...
+        android:networkSecurityConfig="@xml/network_security_config" 
+앞서 언급 하였듯이, 이 방법은 network_security_config.xml 파일에 앱 내 텍스트로 사용할 URL들이 정의되어 있어야 한다.
+
+만약, res/xml/network_security_config.xml 파일 내에서 cleartextTrafficPermitted 속성을 true가 아닌 false로 해 놓는다면 이 방법은 제대로 작동하지 않는다.
+
+
+ 
+ 
+
+2) AndroidManifest.xml 에서 application 의 usesClearTextTraffic 속성 수정
+
+ 
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ...>
+    ...
+    <application
+        ...
+        android:usesCleartextTraffic="true"
+이 방법을 사용하게 되면, 모든 페이지에 대해서 http를 사용한 접근을 허용하게 만들기 때문에, 1)의 방법보다는 보안이 떨어지게 된다. 따라서, 특별한 이유가 없다면 이 방법보다는 1)의 방식을 사용하는 것을 추천한다.
+
+ 
+
+3) Android Manifest.xml에서 targetSandboxVersion 속성을 사용 중일 경우 관련 내용: https://developer.android.com/guide/topics/manifest/manifest-element#targetSandboxVersion
+
+
+ 
+ 
+
+위 관련 내용에 따르면 속성 값이 높을수록 보안 수준이 높아지며, 2일 경우 usesCleartextTraffic의 기본 값이 false가 된다. 그래서 이 속성의 값을 1로 변경해야함. 다만 Android 8.0 (API 26) 이상을 타겟팅하는 Android Instant Apps의 경우 이 속성을 2로 설정해야 한다.
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:targetSandboxVersion="1">
+    ...
+
+

@@ -1,0 +1,81 @@
+URL 관련 기능들
+
+
+
+
+
+
+
+자바스크립트로 프론트 엔드 부분을 구현하다보면 URL과 관련된 기능들을 사용해야 하는 순간들이 오기 마련이다. 이 글에서는 매우 기초적이면서 중요한 자바스크립트 기능들에 대해서 언급할 것이다.
+
+
+
+
+
+1. 현재 URL 주소 값 가져오기
+
+
+
+
+
+현재 페이지의 URL 주소를 알아야 할 필요가 있을 때에는 다음 코드를 사용하면 된다.
+
+
+
+window.location.href
+
+
+위의 코드는 현재 페이지의 주소를 반환한다. 이 값을 변수에 저장한 후에 원하는 기능을 구현하면 될 것이다.
+
+
+
+
+
+
+
+2. 다른 웹 페이지로 이동
+
+
+
+
+
+1) 다른 페이지로 넘어가기
+
+
+
+위에서 언급하였던 "window.location.href"를 이용하면 다른 페이지로 넘어가도록 만들 수 있다.
+
+
+
+window.location.href = "www.something.com" //www.something.com 에 해당하는 웹 페이지로 이동
+
+
+
+
+
+2) 현재 페이지를 다른 페이지로 대체하기
+
+
+
+window.location.replace("www.something.com"); //현재 URL 주소를 www.something.com으로 대체
+
+
+
+이 방식을 사용할 경우, URL을 대체하기 때문에 브라우저에서 "뒤로 가기" 버튼을 눌러도 대체 이전의 웹 페이지로 복귀가 불가능하다. 따라서, 다시 해당 페이지로 돌아가야 할 필요가 있는 경우라면 window.location.href를 이용하는 편이 더 낫다.
+
+
+
+
+
+3) jQuery를 사용해서 이동
+
+
+
+$(location).attr('href', 'www.something.com'); //jQuery를 이용해 window.location.href에 접근
+
+
+
+이 방식을 사용하게 되면, jQuery를 이용해서 위에서 언급하였던 window.location.href에 쉽게 접근이 가능하다. jQuery를 이미 사용 중이었을 경우에는 이 방식이 가장 간편한 방식이 될 것이다.
+
+
+

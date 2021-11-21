@@ -1,0 +1,32 @@
+리액트 네이티브에서 웹 서버로부터 데이터를 가져오는 가장 보편적인 방법 중 하나가 바로 fetch() 메소드의 사용이다. 그런데, 안드로이드 9 (Oreo) 버전부터 이 fetch() 메소드와 같이 데이터를 가져오기 위한 통신을 할 때에 HTTP 프로토콜을 사용할 수 없게 된다. 별다른 설정을 하지 않을 경우, HTTP 프로토콜을 사용해서 데이터를 가져오려고 하면 에러가 나게 되는 것이다.
+
+ 
+
+이에 대한 해결 방법으로는 크게 2가지가 있다 - 1) HTTP 대신 HTTPS 사용 2) AndroidMenifest.xml 파일 수정하기
+
+ 
+
+1) HTTP 대신 HTTPS 사용
+
+당연히 가장 기본적인 방법은 HTTP 대신 HTTPS 프로토콜을 사용하는 것이다. HTTPS를 사용하는 것이 보안 상으로도 더욱 안전하니 별다른 이유가 없다면 단연코 이것이 가장 먼저 고려해 봐야할 옵션이다.
+
+ 
+
+2) AndroidMenifest.xml 파일 수정하기
+
+AndroidMenifest.xml 파일에 가면 application 태그가 보일 것이다. 이 태그에 아래와 같이
+
+android:usesCleartextTraffic="true" 를 추가해주면 된다.
+
+
+usesCleartextTraffic 속성을 true로 설정함으로써, 해당 앱에서 사용하는 데이터 통신이 모두 검증된 안전한 통신임을 확인시켜주고 안드로이드 앱이 HTTP 프로토콜을 사용할 수 있게 허가해주는 방법이라고 보면 될 것이다.
+
+ 
+
+https://stackoverflow.com/questions/51902629/how-to-allow-all-network-connection-types-http-and-https-in-android-9-pie
+
+ 
+
+https://github.com/facebook/react-native/issues/24408
+
+

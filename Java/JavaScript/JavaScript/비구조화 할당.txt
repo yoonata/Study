@@ -1,0 +1,106 @@
+비구조화 할당
+
+
+
+
+
+
+
+비구조화 할당은 이름은 어색하지만 매우 유용한 기능이다. 이 기능을 사용하면, 객체와 배열로부터 속성이나 요소를 쉽게 꺼낼 수 있다.
+
+
+
+i.e.
+
+var candyMachine = {
+
+status: {
+
+name: 'node',
+
+count: 5
+
+},
+
+getCandy: function() {
+
+this.status.count--;
+
+return this.status.count;
+
+}
+
+};
+
+
+
+var getCandy = candyMachine.getCandy;
+
+var count = candyMachine.status.count;
+
+
+
+
+
+위의 예제는 객체의 속성을 같은 이름의 변수에 대입하는 코드이다.
+
+
+
+비구조화 할당 기능을 통해서 이를 다음과 같이 바꿀 수 있다.
+
+
+
+i.e.
+
+const candyMachine = {
+
+status: {
+
+name: 'node',
+
+count: 5
+
+},
+
+getCandy() {
+
+this.status.count--;
+
+return this.status.count;
+
+}
+
+};
+
+
+
+const {getCandy, status: {count} } = candyMachine;
+
+
+
+
+
+매우 괴상한 형태인 위의 코드가 ES2015 문법상으로는 유효한 코드이다. 위의 코드는 candyMachine 객체 안의 속성을 찾아서 좌항의 각 변수와 매칭한 뒤에 그 결과를 각 변수들에 저장한다. count와 같이 여러 단계 안에 있는 속성도 찾아서 매칭 시킬 수 있다.
+
+
+
+앞서 말했듯이, 배열 역시 비구조화 할당에 이용이 가능하다.
+
+
+
+i.e.
+
+const array = ['node.js', {}, 10, true];
+
+const [node, obj, , bool] = array;
+
+
+
+어색해 보이지만, 나름대로 규칙이 있다. node, obj와 bool의 위치를 잘 보면, node는 첫 번째 요소, obj는 두 번째 요소, 그리고 bool이 마지막 요소라는 것을 알 수 있다. obj와 bool 사이에 빈공간은 그 둘 사이의 요소들은 무시하라는 의미이다.
+
+
+
+비구조화 할당은 코드의 줄 수를 상당히 줄여주므로 유용하다. 특히 node.js는 모듈을 사용하므로 이러한 방식을 자주 사용한다.
+
+
+

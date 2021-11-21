@@ -1,0 +1,62 @@
+Error: ER_CON_COUNT_ERROR: Too many connections
+
+
+
+
+
+
+
+노드에서 mysql 모듈을 사용하는 많은 사람들이 다음과 같은 에러 메세지와 마주치게 된다.
+
+
+
+
+
+
+
+"Error: ER_CON_COUNT_ERROR: Too many connections" 라는 에러 메세지가 알려주듯이, node.js 서버와 mysql 데이터베이스 사이의 열려 있는 커넥션 개수가 너무 많아서(제한된 범위 이상) 이러한 에러가 발생한 것이다.
+
+
+
+이 문제의 해결법은 매우 간단하다. connection이 열린 상태에서 닫히지 않고, 그러한 connection들이 쌓이면서 생긴 문제이기 때문에, 그저 커넥션을 닫아주는 "conn.release()" 메소드를 사용하면 된다.
+
+
+
+
+
+let pool = mysql.createPool({
+    connectionLimit : 1000, //connectionLimit 필드의 기본 값은 10이다.
+    host            : HOST,
+    user            : USER,
+    password        : PASSWORD,
+    database        : DB
+});
+
+function sqlConnectionExample() {
+
+    let queryString = SQL_QUERY;
+
+    pool.getConnection(function (err, conn) {
+        if (err) {
+            throw err;
+        } else {
+            conn.query(queryString, function (err, result, fields) {
+                if (err) {
+                    throw err;
+                } else {
+                    console.log(`The number of rows that are affected by insertion: ${result.affectedRows}`);
+                }
+            });
+        }
+
+        conn.release();
+    });
+
+};
+
+
+
+과거에는 conn.end() 메소드를 사용했지만, 그 메소드는 이제는 deprecated된 메소드이기 때문에 사용하지 않는 것이 좋다.
+
+
+

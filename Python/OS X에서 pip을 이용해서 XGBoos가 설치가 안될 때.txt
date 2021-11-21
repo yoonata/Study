@@ -1,0 +1,43 @@
+XGBoost는 머신러닝이나 데이터 과학에서 매우 자주 사용되는 알고리즘이다. 이 알고리즘이 유명해진 이유들 중 하나로는 kaggle에서 상위 랭커들이 이 알고리즘을 사용해서 높은 성적을 얻어내었기 때문이다.
+
+ 
+
+XGBoost가 앙상블 알고리즘들 중에서도 특히 유명한 알고리즘들 중 하나이며, 부스팅 알고리즘들 중에서 빠르고 높은 성능을 보이기 때문에 분류 문제에서 자주 사용되곤 한다.
+
+ 
+
+그런데, 맥북 사용자들 중에서 알 수 없는 에러로 인해서 XGBoost를 설치하지 못하는 사람들이 종종 보이곤 한다.
+
+ 
+
+"ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output." 과 같은 에러 메세지를 출력하면서 설치가 중지되는 이 현상은 유독 맥북 사용자들에게서 자주 일어난다.
+
+ 
+
+이 문제의 해결책으로 알려진 방법이 2가지 있는데, 첫번째는 gcc의 버전을 바꾸고 다시 링크를 하는 방식이 있으며, 두번째로는 anaconda를 사용해서 설치를 하는 방식이다.
+
+ 
+
+1) gcc 버전 변경
+
+gcc의 버전을 변경하기 위해서 homebrew로 gcc@8을 설치하고, 다시 링크를 하면 된다.
+
+i.e.
+
+brew install gcc@8
+
+brew switch gcc 8.3.0_2
+
+brew link --overwrite gcc
+
+ 
+
+자세한 설명은 <https://superuser.com/questions/1439113/unable-to-import-xgboost-in-python>를 참고하기를 바란다.
+
+ 
+
+2) 아나콘다로 설치하기
+
+"conda install py-xgboost" 를 사용해서 설치를 하면 pip3를 사용할 때는 안 되던 XGBoost의 설치가 되는 경우가 있다. 왜 그런지에 대해서 정확한 이유에 대해서는 찾지 못하였다.
+
+
