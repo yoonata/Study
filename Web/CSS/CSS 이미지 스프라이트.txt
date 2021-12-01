@@ -1,0 +1,45 @@
+CSS 이미지 스프라이트
+CSS 이미지 스프라이트(Image Sprite)
+이미지 스프라이트(image sprite)란 여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를 의미합니다.
+
+ 
+
+웹 페이지에 이미지가 사용될 경우 해당 이미지를 다운받기 위해 웹 브라우저는 서버에 이미지를 요청하게 됩니다.
+
+하지만 사용된 이미지가 많을 경우 웹 브라우저는 서버에 해당 이미지의 수만큼 요청해야만 하므로 웹 페이지의 로딩 시간이 오래 걸리게 됩니다.
+
+ 
+
+이미지 스프라이트(image sprite)를 사용하면 이미지를 다운받기 위한 서버 요청을 단 몇 번으로 줄일 수 있습니다.
+
+모바일 환경과 같이 한정된 자원을 사용하는 플랫폼(platform)에서는 웹 페이지의 로딩 시간을 단축해주는 효과가 있습니다.
+
+또한, 많은 이미지 파일을 관리하는 대신 몇 개의 스프라이트 이미지(sprite image) 파일만을 관리하면 되므로 매우 간편합니다.
+
+ 
+
+다음 예제는 하나의 이미지를 가지고 네 개의 아이콘을 만드는 예제입니다.
+
+네 개의 아이콘을 만들기 위해 네 개의 이미지를 사용하는 것이 아닌 다음 이미지 하나만을 가지고 작업하게 됩니다.
+
+ 
+
+image sprites
+
+ 
+
+예제
+<style>
+
+    .up, .down, .right, .left { background: url("/examples/images/img_image_sprites.png") no-repeat; }
+
+    .up { width: 21px; height: 20px; background-position: 0 0; }
+
+    .down { width: 21px; height: 20px; background-position: -21px 0; }
+
+    .right { width: 22px; height: 20px; background-position: -42px 0; }
+
+    .left { width: 22px; height: 20px; background-position: -65px 0; }
+
+</style>
+
