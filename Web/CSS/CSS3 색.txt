@@ -1,0 +1,223 @@
+CSS3 색
+ 
+
+CSS3에서 새롭게 추가된 색 표현 방법은 다음과 같습니다.
+
+ 
+
+1. RGBA 색상값으로 표현
+
+2. HSL 색상값으로 표현
+
+3. HSLA 색상값으로 표현
+
+4. opacity 속성
+
+ 
+
+CSS2 색
+CSS2까지는 색을 표현하기 위해서 다음 방법만을 사용할 수 있었습니다.
+
+ 
+
+1. 색상 이름으로 표현
+
+2. RGB 색상값으로 표현
+
+3. 16진수 색상값으로 표현
+
+ 
+
+CSS 색 수업 확인 =>
+
+CSS3에서 추가된 색상값 및 opacity 속성 지원 버전
+CSS3에서 추가된 색상값 및 opacity 속성을 지원하는 주요 웹 브라우저의 버전은 다음과 같습니다.
+
+속성	ie	chrome	firefox	safari	opera
+RGBA 색상값,
+
+HSL 색상값,
+
+HSLA 색상값
+
+9.0	4.0	3.0	3.1	10.1
+opacity	9.0	4.0	2.0	3.1	10.1
+RGBA 색상값으로 표현
+RGBA 색상값은 RGB 색상값에 알파 채널 값을 더한 색상값입니다.
+
+ 
+
+알파 채널(alpha channel)이란 색상의 투명도를 나타내는 채널입니다.
+
+알파 채널 값은 완전한 투명 상태인 0.0부터 투명도가 전혀 없는 1.0 사이의 값을 가집니다.
+
+예제
+<style>
+
+    #header_01 {background-color: rgba(0,255,0,0);}
+
+    #header_02 {background-color: rgba(0,255,0,0.2);}
+
+    #header_03 {background-color: rgba(0,255,0,0.4);}
+
+    #header_04 {background-color: rgba(0,255,0,0.6);}
+
+    #header_05 {background-color: rgba(0,255,0,0.8);}
+
+    #header_06 {background-color: rgba(0,255,0,1);}
+
+</style>
+
+코딩연습 ▶
+
+HSL 색상값으로 표현
+HSL 색상값은 빛의 삼원색으로 색을 표현하는 RGB 색상값과는 달리 색상, 채도, 명도를 사용해서 색을 표현합니다.
+
+HSL 색상값에서 HSL은 각각 색상(Hue), 채도(Saturation), 명도(Lightness)를 의미합니다.
+
+ 
+
+색상은 0부터 360 사이의 값을 가지며, 색상환(color wheel)의 각도를 나타냅니다.
+
+색상 값이 0 또는 360이면 빨간색(red)이 되며, 120이면 녹색(green), 240이면 파란색(blue)이 됩니다.
+
+예제
+<style>
+
+    #header_01 {background-color: hsl(0, 100%, 50%);}
+
+    #header_02 {background-color: hsl(90, 100%, 50%);}
+
+    #header_03 {background-color: hsl(180, 100%, 50%);}
+
+    #header_04 {background-color: hsl(270, 100%, 50%);}
+
+    #header_05 {background-color: hsl(360, 100%, 50%);}
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+채도는 0%부터 100% 사이의 값을 가지며, 색상의 연하고 짙은 정도를 나타냅니다.
+
+채도 값이 0%면 회색이 되고, 100%면 원래 색상이 됩니다.
+
+예제
+<style>
+
+    #header_01 {background-color: hsl(0, 0%, 50%);}
+
+    #header_02 {background-color: hsl(0, 20%, 50%);}
+
+    #header_03 {background-color: hsl(0, 40%, 50%);}
+
+    #header_04 {background-color: hsl(0, 60%, 50%);}
+
+    #header_05 {background-color: hsl(0, 80%, 50%);}
+
+    #header_06 {background-color: hsl(0, 100%, 50%);}
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+명도는 0%부터 100% 사이의 값을 가지며, 색상의 밝고 어두운 정도를 나타냅니다.
+
+명도 값이 0%면 검정색이 되고, 50%면 원래 색상, 100%면 흰색이 됩니다.
+
+예제
+<style>
+
+    #header_01 {background-color: hsl(0, 100%, 0%);}
+
+    #header_02 {background-color: hsl(0, 100%, 20%);}
+
+    #header_03 {background-color: hsl(0, 100%, 40%);}
+
+    #header_04 {background-color: hsl(0, 100%, 50%);}
+
+    #header_05 {background-color: hsl(0, 100%, 60%);}
+
+    #header_06 {background-color: hsl(0, 100%, 80%);}
+
+    #header_07 {background-color: hsl(0, 100%, 100%);}
+
+</style>
+
+코딩연습 ▶
+
+HSLA 색상값으로 표현
+HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니다.
+
+예제
+<style>
+
+    #header_01 {background-color: hsla(0, 100%, 50%, 0);}
+
+    #header_02 {background-color: hsla(0, 100%, 50%, 0.2);}
+
+    #header_03 {background-color: hsla(0, 100%, 50%, 0.4);}
+
+    #header_04 {background-color: hsla(0, 100%, 50%, 0.6);}
+
+    #header_05 {background-color: hsla(0, 100%, 50%, 0.8);}
+
+    #header_06 {background-color: hsla(0, 100%, 50%, 1);}
+
+</style>
+
+코딩연습 ▶
+
+opacity 속성
+opacity 속성은 색상에 대한 투명도를 설정해 줍니다.
+
+opacity 속성값은 완전한 투명 상태인 0.0부터 투명도가 전혀 없는 1.0 사이의 값을 가집니다.
+
+예제
+<style>
+
+    #header_01 {background-color: rgb(0,255,0); opacity:0}
+
+    #header_02 {background-color: rgb(0,255,0); opacity:0.2}
+
+    #header_03 {background-color: rgb(0,255,0); opacity:0.4}
+
+    #header_04 {background-color: rgb(0,255,0); opacity:0.6}
+
+    #header_05 {background-color: rgb(0,255,0); opacity:0.8}
+
+    #header_06 {background-color: rgb(0,255,0); opacity:1}
+
+</style>
+
+코딩연습 ▶
+
+opacity 속성과 알파 채널과의 차이점
+위에서 살펴본 opacity 속성과 알파 채널 모두 투명도를 조절한다는 공통점을 가지고 있습니다.
+
+ 
+
+opacity 속성은 투명도를 설정했을 때 설정한 요소의 모든 자식(child) 요소까지 전부 같은 투명도로 설정합니다.
+
+하지만 알파 채널은 투명도를 설정한 요소에만 투명도를 설정하는 차이점이 존재합니다.
+
+ 
+
+다음 예제는 opacity 속성과 알파 채널과의 차이점을 보여주는 예제입니다.
+
+예제
+<style>
+
+    #para_01 {background-color: rgb(255,0,0); opacity:0}
+
+    #para_06 {background-color: rgb(255,0,0); opacity:1}
+
+    #para_07 {background-color: rgba(255,0,0,0);}
+
+    #para_12 {background-color: rgba(255,0,0,1);}
+
+</style>

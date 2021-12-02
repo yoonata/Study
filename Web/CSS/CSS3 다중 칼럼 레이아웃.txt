@@ -1,0 +1,218 @@
+다중 칼럼 레이아웃
+다중 칼럼(multi-column) 레이아웃
+CSS에서는 신문과 같이 여러 개의 칼럼(column)으로 구성되는 구조를 column 속성을 이용하여 손쉽게 만들 수 있습니다.
+
+ 
+
+다중 칼럼(multi-column)을 위해 제공되는 속성은 다음과 같습니다.
+
+ 
+
+1. columns
+
+2. column-count
+
+3. column-gap
+
+4. column-width
+
+5. column-span
+
+6. column-fill
+
+7. column-rule
+
+8. column-rule-style
+
+9. column-rule-width
+
+10. column-rule-color
+
+CSS3 다중 칼럼(multi-column) 지원 버전
+CSS3 다중 칼럼(multi-column)을 지원하는 주요 웹 브라우저의 버전은 다음과 같습니다.
+
+또한, 브라우저별로 벤더 프리픽스(vendor prefix)를 이용해 이 기능을 최초로 지원한 버전도 같이 표기했습니다.
+
+속성	ie	chrome	firefox	safari	opera
+column-count
+
+column-cap
+
+column-rule
+
+column-rule-color
+
+column-rule-style
+
+column-rule-width
+
+column-width
+
+10.0	
+50.0
+
+4.0 -webkit-
+
+2.0 -moz-
+
+9.0
+
+3.1 -webkit-
+
+37.0
+
+15.0 -webkit-
+
+11.1
+
+column-span	10.0	
+50.0
+
+4.0 -webkit-
+
+지원하지 않음	
+9.0
+
+3.1 -webkit-
+
+37.0
+
+15.0 -webkit-
+
+11.1
+
+column-count 속성
+column-count 속성은 해당 요소를 몇 개의 칼럼(column)으로 나눌지를 설정합니다.
+
+예제
+<style>
+
+    #origin { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; }
+
+</style>
+
+코딩연습 ▶
+
+column-gap 속성
+column-gap 속성은 칼럼(column) 사이의 간격을 설정합니다.
+
+예제
+<style>
+
+    #gap { -webkit-column-gap: 70px; -moz-column-gap: 70px; column-gap: 70px; }
+
+</style>
+
+코딩연습 ▶
+
+column-width 속성
+column-width 속성은 칼럼의 너비를 설정합니다.
+
+웹 브라우저는 설정한 너비의 칼럼을 만든 후, 나머지 영역을 동일하게 나누어 칼럼 사이의 간격으로 자동 설정합니다.
+
+예제
+<style>
+
+    #gap { -webkit-column-width: 150px; -moz-column-width: 150px; column-width: 150px; }
+
+</style>
+
+코딩연습 ▶
+
+column-span 속성
+column-span 속성은 해당 요소가 몇 개의 칼럼을 병합하여 표현할지를 설정합니다.
+
+예제
+<style>
+
+    #merge { -webkit-column-span: all; column-span: all; }
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+column-count 속성은 파이어폭스와 익스플로러 9와 그 이전 버전에서 지원하지 않습니다.
+column-rule-style 속성
+column-rule-style 속성은 칼럼 사이에 들어갈 라인의 스타일을 설정합니다.
+
+예제
+<style>
+
+    #line { -webkit-column-rule-style: solid; -moz-column-rule-style: solid; column-rule-style: solid; }
+
+</style>
+
+코딩연습 ▶
+
+column-rule-width 속성
+column-rule-width 속성은 칼럼 사이에 들어갈 라인의 두께를 설정합니다.
+
+예제
+<style>
+
+    #line {
+
+        -webkit-column-rule-style: solid; -moz-column-rule-style: solid; column-rule-style: solid;
+
+        -webkit-column-rule-width: 5px; -moz-column-rule-width: 5px; column-rule-width: 5px;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+column-rule-color 속성
+column-rule-color 속성은 칼럼 사이에 들어갈 라인의 색상을 설정합니다.
+
+예제
+<style>
+
+    #line {
+
+        -webkit-column-rule-style: solid; -moz-column-rule-style: solid; column-rule-style: solid;
+
+        -webkit-column-rule-width: 5px; -moz-column-rule-width: 5px; column-rule-width: 5px;
+
+        -webkit-column-rule-color: #6495ED; -moz-column-rule-color: #6495ED; column-rule-color: #6495ED;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+column-rule 속성
+모든 columns-rule 속성을 이용한 스타일을 한 줄에 설정할 수 있습니다.
+
+예제
+<style>
+
+    #line {
+
+        -webkit-column-rule: 5px solid #6495ED;
+
+        -moz-column-rule: 5px solid #6495ED;
+
+        column-rule: 5px solid #6495ED;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+CSS3 다중 칼럼(multi-column) 속성
+속성	설명
+columns	모든 columns 속성을 이용한 스타일을 한 줄에 설정할 수 있음.
+column-count	해당 요소를 몇 개의 칼럼(column)으로 나눌지를 설정함.
+column-gap	칼럼 사이의 간격을 설정함.
+column-width	칼럼의 너비를 설정함.
+column-span	해당 요소가 몇 개의 칼럼(column)을 병합해서 표현할지를 설정함.
+column-fill	칼럼을 어떻게 채울지 설정함.
+column-rule	모든 columns 속성을 이용한 스타일을 한 줄에 설정할 수 있음.
+column-rule-style	칼럼 사이에 들어갈 라인의 스타일을 설정함.
+column-rule-width	칼럼 사이에 들어갈 라인의 두께를 설정함.
+column-rule-color	칼럼 사이에 들어갈 라인의 색상을 설정함.

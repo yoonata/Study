@@ -1,0 +1,143 @@
+<!--
+    @규칙(at-rule)
+
+    CSS에서는 W3C에서 규정하고 있는 몇몇 규칙들을 사용할 수 있습니다.
+    그 중에서도 많이 사용되는 대표적인 규칙은 다음과 같습니다.
+
+    1. @import
+    2. @font-face
+    3. @media
+-->
+
+<!--
+    @import 규칙
+    
+    @import 규칙은 다른 스타일 시트에서 스타일 규칙을 가져올 수 있는 규칙입니다.
+    이 규칙은 스타일 시트에 사용되는 문자 인코딩을 지정하는 @charset 규칙을 제외하고 모든 다른 규칙보다 앞서 명시되어야 합니다.
+    보통 HTML 문서에는 다음과 같이 여러 개의 <link>태그를 사용하여 스타일 시트를 추가합니다.
+-->
+
+<!--
+    HTML 문서
+-->
+
+<head>
+
+    <title>@import 규칙</title>
+    
+    <link rel="stylesheet" href="firstStyleSheet.css">
+    
+    <link rel="stylesheet" href="secondStyleSheet.css">
+    
+    ...
+    
+    <link rel="stylesheet" href="hundredStyleSheet.css">
+
+</head>
+
+<!--
+    하지만 이렇게 추가하는 CSS 파일의 개수가 늘어날수록 웹 서버의 부하도 같이 커지게 됩니다.
+    따라서 HTML 문서에는 일정 개수의 CSS 파일만을 추가하고, 추가된 CSS 파일에서 @import 규칙을 이용해 또 다른 CSS 파일을 추가하는 방법을 사용합니다.
+-->
+
+<!--
+    HTML 문서
+-->
+
+<head>
+
+    <title>@import 규칙</title>
+    
+    <link rel="stylesheet" href="firstStyleSheet.css">
+    
+    <link rel="stylesheet" href="secondStyleSheet.css">
+
+</head>
+
+<!--
+    firstStyleSheet.css
+--> 
+
+@import url("thirdStyleSheet.css");
+
+@import "fourthStyleSheet.css";
+
+...
+
+<!--
+    @import 규칙을 사용해도 추가하는 CSS 파일의 개수가 늘어나면 여전히 웹 서버의 부하는 커질 수밖에 없습니다.
+    따라서 웹 서버의 부하를 줄이기 위해 작성한 CSS 파일들을 적절히 분산해서 추가하는 방법이 필요해집니다.
+    @import 규칙을 이용하면 미디어 쿼리(media query)의 조건에 따라 필요한 CSS 파일만을 선별적으로 불러올 수 있습니다.
+    다음 예제는 프린트할 때에는 firstStyleSheet.css 파일을 불러오고, 스크린이 가로 방향으로 설정되어 있을 때는 secondStyleSheet.css 파일을 불러오는 예제입니다.
+-->
+
+<!--
+    HTML 문서
+-->
+
+<head>
+
+    <title>@import 규칙</title>
+    
+    @import url("firstStyleSheet.css") print;
+    
+    @import "secondStyleSheet.css" screen and (orientation:landscape);
+
+</head>
+
+<!--
+    @font-face 규칙
+
+    @font-face 규칙은 웹 폰트(web font)를 정의할 때 사용하는 규칙입니다.
+    웹 폰트(web font)는 사용자의 컴퓨터에 설치되어 있지 않은 글꼴(font)을 웹 브라우저가 사용할 수 있게 해줍니다.
+    우선 웹 폰트를 서버에 올려놓고, CSS 파일에 @font-face 규칙을 사용하여 웹 폰트를 정의하고 추가합니다.
+    그러면 해당 웹 페이지에 접속하는 모든 웹 브라우저는 자동으로 서버에서 웹 폰트를 내려받아 해당 글꼴을 표시하게 됩니다.
+-->
+
+<!--
+    HTML 문서
+-->
+
+<style>
+
+    @font-face {
+    
+        font-family: "myWebFont";
+    
+        src: local("NanumGothic"), url("NanumGothic.eot"), url("NanumGothic.ttf"), url("NanumGothic.woff");
+    
+    }
+    
+    * { font-family: "myWebFont"; }
+
+</style>
+
+<!--
+    @media 규칙
+    
+    CSS2에서는 @media 규칙을 통해 서로 다른 미디어 타입(media type)을 위한 맞춤식 스타일 시트를 지원합니다.
+    다음 예제는 HTML 문서가 스크린에 표현될 때와 프린트할 때 서로 다른 스타일을 적용해 주는 예제입니다.
+-->
+
+<!--
+    HTML 문서
+-->
+
+<style>
+
+    
+    body { background-color: darkorange; }
+    
+    @media screen {
+    
+        body { background-color: black; color: white; }
+    
+    }
+    
+    @media print {
+    
+        body { background-color: white; color: black; }
+    
+    }
+    
+</style>

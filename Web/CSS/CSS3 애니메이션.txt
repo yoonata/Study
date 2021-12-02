@@ -1,0 +1,434 @@
+Animation
+ 
+
+CSS3에서는 animation 속성을 사용하여 요소의 현재 스타일을 다른 스타일로 천천히 변화시킬 수 있습니다.
+
+CSS2에서는 이러한 효과를 표현하기 위해서는 자바스크립트나 플래시 등의 외부 플러그인을 사용해야만 했습니다.
+
+하지만 CSS3에서는 이러한 애니메이션 효과를 손쉽게 적용할 수 있게 되었습니다.
+
+ 
+
+bunny
+CSS3 애니메이션(animation) 지원 버전
+CSS3 애니메이션(animation)을 지원하는 주요 웹 브라우저의 버전은 다음과 같습니다.
+
+또한, 브라우저별로 벤더 프리픽스(vendor prefix)를 이용해 이 기능을 최초로 지원한 버전도 같이 표기했습니다.
+
+속성	ie	chrome	firefox	safari	opera
+@keyframes
+
+animation
+
+10.0
+
+43.0
+
+4.0 -webkit-
+
+16.0
+
+5.0 -moz-
+
+9.0
+
+4.0 -webkit-
+
+30.0
+
+15.0 -webkit
+
+12.0 -o-
+
+@keyframes 규칙
+CSS3에서 애니메이션 효과를 사용하기 위해서는 우선 애니메이션에 대한 키 프레임(keyframe)을 정의해야 합니다.
+
+키 프레임(keyframe)에는 특정한 시간에 해당 요소가 가져야 할 CSS 스타일을 명시합니다.
+
+ 
+
+@keyframes 규칙 안에 이렇게 CSS 스타일을 설정해 놓으면, 해당 요소의 스타일은 특정 시간까지 현재 스타일에서 설정해 놓은 새로운 스타일로 천천히 변화할 것입니다.
+
+ 
+
+애니메이션 효과가 동작하기 위해서는 먼저 animation-name 속성을 이용하여 요소와 키 프레임을 연결해 주어야 합니다.
+
+예제
+<style>
+
+    p {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 3s;
+
+        animation-name: movingPara;
+
+        animation-duration: 3s;
+
+    }
+
+    @keyframes movingPara {
+
+        from { margin-left: 100%; }
+
+        to { margin-left: 0%; }
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+위의 예제에서 from 키워드에는 처음 스타일을 명시하고, to 키워드에는 마지막 스타일을 명시합니다.
+
+ 
+
+하지만 좀 더 복잡한 애니메이션 효과를 나타내기 위해서는 from 키워드나 to 키워드 대신에 퍼센트(%)를 사용할 수 있습니다.
+
+0%에는 처음 스타일을, 100%에는 마지막 스타일을 명시하고, 중간에 원하는 수만큼의 키 프레임을 생성할 수 있습니다.
+
+ 
+
+예제
+<style>
+
+    p {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 4s;
+
+        animation-name: movingPara;
+
+        animation-duration: 4s;
+
+    }
+
+    @-webkit-keyframes movingPara {
+
+        0% { border-color: red; }
+
+        20% { border-color: orange; }
+
+        40% { border-color: yellow; }
+
+        50% { border-color: green; }
+
+        60% { border-color: blue; }
+
+        80% { border-color: navy; }
+
+        100% { border-color: purple; }
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+재생이 모두 끝난 애니메이션 효과는 해당 요소가 맨 처음 가지고 있던 스타일로 요소를 되돌려 놓습니다.
+
+animation-duration 속성
+animation-duration 속성은 애니메이션 효과를 재생할 시간을 설정합니다.
+
+재생 시간의 기본값은 0초이므로, 재생할 시간을 명시하지 않으면 아무런 효과도 나타나지 않을 것입니다.
+
+animation-delay 속성
+animation-delay 속성은 애니메이션 효과가 나타나기까지의 지연 시간을 설정합니다.
+
+애니메이션 효과는 이 속성값으로 설정된 시간이 흐른 뒤에야 비로소 시작됩니다.
+
+예제
+<style>
+
+    p {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 4s;
+
+        -webkit-animation-delay: 2s;
+
+        animation-name: movingPara;
+
+        animation-duration: 4s;
+
+        animation-delay: 2s;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+animation-iteration-count 속성
+animation-iteration-count 속성은 애니메이션 효과의 반복 횟수를 설정합니다.
+
+이 속성값으로 infinite를 설정하면, 애니메이션 효과가 무한히 반복될 것입니다.
+
+예제
+<style>
+
+    #one, #loop {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 4s;
+
+        animation-name: movingPara;
+
+        animation-duration: 4s;
+
+    }
+
+    #one {
+
+        -webkit-animation-iteration-count: 2;
+
+        animation-iteration-count: 2;
+
+    }
+
+    #loop {
+
+        -webkit-animation-iteration-count: infinite;
+
+        animation-iteration-count: infinite;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+animation-direction 속성
+animation-direction 속성은 애니메이션의 진행 방향을 설정합니다.
+
+진행 방향을 나타내는 속성값으로 reverse와 alternate를 설정할 수 있습니다.
+
+ 
+
+reverse 속성값은 애니메이션 효과의 진행 방향을 원래 방향이 아닌 반대 방향으로 변경합니다.
+
+즉, 애니메이션 효과가 from에서 to 방향이 아닌, to에서 from 방향으로 진행됩니다.
+
+예제
+<style>
+
+    div {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 2s;
+
+        animation-name: movingPara;
+
+        animation-duration: 2s;
+
+    }
+
+    #backward {
+
+        -webkit-animation-direction: reverse;
+
+        animation-direction: reverse;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+ 
+
+alternate 속성값은 애니메이션 효과의 진행 방향을 애니메이션이 반복될 때마다 계속 변경합니다.
+
+즉, 애니메이션 효과가 from에서 to 방향으로 한 번 진행되고 나면, 다음번에는 to에서 from 방향으로 진행되게 변경시킵니다.
+
+이런 식으로 번갈아 가면서 전체 반복 횟수만큼 애니메이션을 반복하게 됩니다.
+
+예제
+<style>
+
+    div {
+
+        -webkit-animation-name: movingPara;
+
+        -webkit-animation-duration: 2s;
+
+        -webkit-animation-iteration-count: 4;
+
+        animation-name: movingPara;
+
+        animation-duration: 2s;
+
+        animation-iteration-count: 4;
+
+    }
+
+    #backward {
+
+        -webkit-animation-direction: alternate;
+
+        animation-direction: alternate;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+animation-timing-function 속성
+animation-timing-function 속성은 애니메이션 효과의 시간당 속도를 설정합니다.
+
+ 
+
+animation-timing-function 속성의 속성값으로는 다음과 같은 값을 설정할 수 있습니다.
+
+ 
+
+1. linear : 애니메이션 효과가 처음부터 끝까지 일정한 속도로 진행됩니다.
+
+2. ease : 기본값으로, 애니메이션 효과가 천천히 시작되어, 그다음에는 빨라지고, 마지막에는 다시 느려집니다.
+
+3. ease-in : 애니메이션 효과가 천천히 시작됩니다.
+
+4. ease-out : 애니메이션 효과가 천천히 끝납니다.
+
+5. ease-in-out : 애니메이션 효과가 천천히 시작되어, 천천히 끝납니다.
+
+6. cubic-bezier(n,n,n,n) : 애니메이션 효과가 사용자가 정의한 cubic-bezier 함수에 따라 진행됩니다.
+
+ 
+
+예제
+<style>
+
+    div {
+
+        -webkit-animation: timingFunc 4s 3;
+
+        animation: timingFunc 4s 3;
+
+    }
+
+    #div_01 {
+
+        -webkit-animation-timing-function: linear;
+
+        animation-timing-function: linear;
+
+    }
+
+    #div_05 {
+
+        -webkit-animation-timing-function: ease-in-out;
+
+        animation-timing-function: ease-in-out;
+
+    }
+
+    @keyframes timingFunc {
+
+        from { left: 0px; }
+
+        to { left: 300px; }
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+애니메이션 축약 표현(animation shorthand)
+모든 animation 속성을 이용한 스타일을 한 줄에 설정할 수 있습니다.
+
+문법
+<style>
+
+    div {
+
+        animation-name: myShorthand;
+
+        animation-duration: 3s;
+
+        animation-timing-function: ease-in-out;
+
+        animation-delay: 1s;
+
+        animation-iteration-count: 3;
+
+        animation-direction: alternate;
+
+    }
+
+</style>
+
+ 
+
+위의 예제와 똑같은 애니메이션 효과를 다음과 같이 표현할 수 있습니다.
+
+문법
+div { animation: myShorthand 3s ease-in-out 1s 3 alternate; }
+
+ 
+
+예제
+<style>
+
+    #long {
+
+        -webkit-animation-name: myShorthand;
+
+        -webkit-animation-duration: 3s;
+
+        -webkit-animation-timing-function: ease-in-out;
+
+        -webkit-animation-delay: 1s;
+
+        -webkit-animation-iteration-count: 3;
+
+        -webkit-animation-direction: reverse;
+
+        animation-name: myShorthand;
+
+        animation-duration: 3s;
+
+        animation-timing-function: ease-in-out;
+
+        animation-delay: 1s;
+
+        animation-iteration-count: 3;
+
+        animation-direction: reverse;
+
+    }
+
+    #short {
+
+        -webkit-animation: myShorthand 3s ease-in-out 1s 3 reverse;
+
+        animation: myShorthand 3s ease-in-out 1s 3 reverse;
+
+    }
+
+</style>
+
+코딩연습 ▶
+
+CSS3 animation 속성
+속성	설명
+animation	모든 animation 속성을 이용한 스타일을 한 줄에 설정할 수 있음.
+animation-name	애니메이션 효과의 이름을 설정함.
+animation-duration	애니메이션 효과를 재생할 시간을 설정함.
+animation-delay	애니메이션 효과가 나타나기까지의 지연 시간을 설정함.
+animation-iteration-count	애니메이션 효과가 몇 번 반복될지를 설정함.
+animation-direction	애니메이션의 진행 방향을 설정함.
+animation-timing-function	애니메이션 효과의 시간당 속도를 설정함.
+animation-fill-mode	애니메이션 효과가 재생 중이 아닐 때 요소의 스타일을 설정함.
+animation-play-state	애니메이션 효과의 재생 상태를 설정함.
