@@ -1,0 +1,73 @@
+XML
+XML은 데이터를 저장하고 전달할 목적으로 만들어졌으며, 저장되는 데이터의 구조를 기술하기 위한 언어입니다.
+
+XML은 EXtensible Markup Language의 약자로, 수많은 응용 분야에서 데이터를 저장하고 전달하는 중요한 역할을 맡고 있습니다.
+
+ 
+
+XML 수업 시작 =>
+
+ 
+
+예제
+<?xml version="1.0" encoding="UTF-8"?>
+
+<programming_languages>
+
+    <language>
+
+        <name>HTML</name>
+
+        <category>web</category>
+
+        <developer>W3C</developer>
+
+        <version status="working draft">5.1</version>
+
+        <priority rating="1">high</priority>
+
+    </language>
+
+    <language>
+
+        <name>CSS</name>
+
+        <category>web</category>
+
+        <developer>W3C</developer>
+
+        <version status="stable">3.0</version>
+
+        <priority rating="3">middle</priority>
+
+    </language>
+
+    <language>
+
+        <name korean="자바">Java</name>
+
+        <category>application</category>
+
+        <developer>Oracle</developer>
+
+        <version status="stable">8.91</version>
+
+        <priority rating="2">high</priority>
+
+    </language>
+
+    <language>
+
+        <name korean="파이썬">Python</name>
+
+        <category>application</category>
+
+        <developer>Python</developer>
+
+        <version status="stable">3.52</version>
+
+        <priority rating="4">middle</priority>
+
+    </language>
+
+</programming_languages>
