@@ -1,61 +1,48 @@
-벤더 프리픽스
-벤더 프리픽스(Vendor Prefix)
-세계적으로 가장 많이 사용되는 웹 브라우저에는 익스플로러, 크롬, 파이어폭스, 사파리, 오페라 등이 있습니다.
+<!--
+    벤더 프리픽스(Vendor Prefix)
 
+    세계적으로 가장 많이 사용되는 웹 브라우저에는 익스플로러, 크롬, 파이어폭스, 사파리, 오페라 등이 있습니다.
+    벤더 프리픽스(vendor prefix)란 이러한 주요 웹 브라우저 공급자가 새로운 실험적인 기능을 제공할 때 이전 버전의 웹 브라우저에 그 사실을 알려주기 위해 사용하는 접두사(prefix)를 의미합니다.
+    즉 아직 CSS 권고안에 포함되지 못한 기능이나, CSS 권고안에는 포함되어 있지만 아직 완벽하게 제정된 상태가 아닌 기능을 사용하고자 할 때 벤더 프리픽스를 사용하게 됩니다.
+    그렇게 하면 해당 기능이 포함되어 있지 않은 이전 버전의 웹 브라우저에서도 그 기능을 사용할 수 있게 됩니다.
+
+    주요 웹 브라우저의 벤더 프리픽스(vendor prefix)
+
+    주요 웹 브라우저가 사용하고 있는 벤더 프리픽스는 다음과 같습니다.
+
+    ie	    chrome	    firefox	    safari	    opera
+    -ms-	-webkit-	-moz-	    -webkit-	-o-
  
+    크롬과 사파리는 같은 웹킷 계열 브라우저이므로 같은 벤더 프리픽스를 사용합니다.
+-->
 
-벤더 프리픽스(vendor prefix)란 이러한 주요 웹 브라우저 공급자가 새로운 실험적인 기능을 제공할 때 이전 버전의 웹 브라우저에 그 사실을 알려주기 위해 사용하는 접두사(prefix)를 의미합니다.
+<!--
+    예제
+-->
 
-즉 아직 CSS 권고안에 포함되지 못한 기능이나, CSS 권고안에는 포함되어 있지만 아직 완벽하게 제정된 상태가 아닌 기능을 사용하고자 할 때 벤더 프리픽스를 사용하게 됩니다.
-
-그렇게 하면 해당 기능이 포함되어 있지 않은 이전 버전의 웹 브라우저에서도 그 기능을 사용할 수 있게 됩니다.
-
- 
-
- 
-
-vendor prefix
-
-주요 웹 브라우저의 벤더 프리픽스(vendor prefix)
-주요 웹 브라우저가 사용하고 있는 벤더 프리픽스는 다음과 같습니다.
-
-ie	chrome	firefox	safari	opera
--ms-	-webkit-	-moz-	-webkit-	-o-
- 
-
-크롬과 사파리는 같은 웹킷 계열 브라우저이므로 같은 벤더 프리픽스를 사용합니다.
-
- 
-
-예제
 <style>
 
     .button {
 
-        background: red;          <!-- gradient 속성을 지원하지 않는 모든 브라우저를 위한 코드 -->
+        background: red;          /* gradient 속성을 지원하지 않는 모든 브라우저를 위한 코드 */
 
-        background: -webkit-linear-gradient(red, yellow); <!-- 크롬과 사파리 4.0 이상을 위한 코드 -->
+        background: -webkit-linear-gradient(red, yellow); /* 크롬과 사파리 4.0 이상을 위한 코드 */
 
-        background: -moz-linear-gradient(red, yellow);    <!-- 파이어폭스 3.6 이상을 위한 코드 -->
+        background: -moz-linear-gradient(red, yellow);    /* 파이어폭스 3.6 이상을 위한 코드 */
 
-        background: -ms-linear-gradient(red, yellow);     <!-- 익스플로러 10.0 이상을 위한 코드 -->
+        background: -ms-linear-gradient(red, yellow);     /* 익스플로러 10.0 이상을 위한 코드 */
 
-        background: -o-linear-gradient(red, yellow);      <!-- 오페라 10.0 이상을 위한 코드 -->
+        background: -o-linear-gradient(red, yellow);      /* 오페라 10.0 이상을 위한 코드 */
 
-        background: linear-gradient(red, yellow);         <!-- CSS 표준 문법 코드 -->
+        background: linear-gradient(red, yellow);         /* CSS 표준 문법 코드 */
 
     }
 
 </style>
 
- 
-
-위의 예제에서 가장 먼저 나오는 background 속성은 gradient 속성을 지원하지 않는 모든 브라우저를 위한 것입니다.
-
-또한, 맨 마지막에 나오는 background 속성은 CSS 표준 문법으로 작성된 코드입니다.
-
-CSS 표준 문법 코드는 벤더 프리픽스(vendor prefix)로 작성된 코드가 모두 나오고 난 후에 나와야만, 벤더 프리픽스가 포함된 코드가 정상적으로 동작할 수 있습니다.
-
- 
-
-이러한 벤더 프리픽스는 실험적인 해당 기능들이 CSS 표준 권고안에 포함되거나, 완벽하게 제정된 상태가 되면 더는 사용할 필요가 없어집니다.
+<!--
+    위의 예제에서 가장 먼저 나오는 background 속성은 gradient 속성을 지원하지 않는 모든 브라우저를 위한 것입니다.
+    또한, 맨 마지막에 나오는 background 속성은 CSS 표준 문법으로 작성된 코드입니다.
+    CSS 표준 문법 코드는 벤더 프리픽스(vendor prefix)로 작성된 코드가 모두 나오고 난 후에 나와야만, 벤더 프리픽스가 포함된 코드가 정상적으로 동작할 수 있습니다.
+    이러한 벤더 프리픽스는 실험적인 해당 기능들이 CSS 표준 권고안에 포함되거나, 완벽하게 제정된 상태가 되면 더는 사용할 필요가 없어집니다.
+-->
