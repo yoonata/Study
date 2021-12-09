@@ -40,12 +40,10 @@ print("Hello World")
 
 """ 
 코드를 작성한 뒤에 F8 키를 누르고 방금 작성한 파이썬 파일을 선택하면 실행 결과가 아래에 나타납니다.
+"""
 
+"""
 결과
-
-Hello World
 """
 
-"""
-출처 : http://tcpschool.com/python/intro_install_python
-"""
+#Hello World
