@@ -15,7 +15,3 @@
 """
 
 print("Hello World")
-
-"""
-출처 : http://tcpschool.com/python/intro
-"""
