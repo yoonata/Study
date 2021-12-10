@@ -38,13 +38,13 @@ print(e)
 실행결과
 """
 
-(1, 'hello')
+#(1, 'hello')
 
-(3, 4.22)
+#(3, 4.22)
 
-(1, 'hello', 3, 4.22)
+#(1, 'hello', 3, 4.22)
 
-(1, 'hello', 1, 'hello', 1, 'hello')
+#(1, 'hello', 1, 'hello', 1, 'hello')
 
 #hello
 
